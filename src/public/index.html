@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>CRUD Tester - Álbum</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, Arial; margin: 20px; background:#0e142b; color:#e9eefc; }
+    .card { background:#141d3d; border:1px solid #2a3563; border-radius:12px; padding:16px; margin-bottom:16px; }
+    label { display:block; margin-top:8px; font-size:14px; }
+    input, select, textarea, button { width:100%; margin-top:4px; padding:8px; border-radius:8px; border:1px solid #2a3563; background:#0e142b; color:#e9eefc; }
+    button { cursor:pointer; }
+    .row { display:flex; gap:8px; flex-wrap:wrap; }
+    .row > * { flex:1; }
+    pre { background:#0e142b; border:1px dashed #2a3563; padding:12px; border-radius:8px; overflow:auto; }
+    small { color:#9fb3ff; }
+  </style>
+</head>
+<body>
+  <h1>CRUD Tester — Álbum de cromos</h1>
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>Recurso</label>
+        <select id="resource">
+          <option value="users">users</option>
+          <option value="players">players</option>
+          <option value="stickers">stickers</option>
+          <option value="packtypes">packtypes</option>
+          <option value="packopenings">packopenings</option>
+          <option value="userstickers">userstickers</option>
+        </select>
+      </div>
+      <div>
+        <label>ID (para GET/PUT/DELETE por id)</label>
+        <input id="docId" placeholder="64f... (ObjectId)" />
+      </div>
+    </div>
+
+    <label>Body JSON (POST/PUT)</label>
+    <textarea id="body" rows="10" placeholder='{"email":"demo@u.mx","name":"Demo"}'></textarea>
+
+    <div class="row" style="margin-top:12px">
+      <button onclick="doCreate()">CREATE (POST)</button>
+      <button onclick="doList()">READ LIST (GET)</button>
+      <button onclick="doGet()">READ BY ID (GET)</button>
+      <button onclick="doUpdate()">UPDATE (PUT)</button>
+      <button onclick="doDelete()">DELETE (DELETE)</button>
+    </div>
+    <small>Tip: para <b>players</b> prueba {"code":"ARG-10","name":"Lionel Messi","team":"ARG","position":"FW","stats":{"age":37}}</small>
+  </div>
+
+  <div class="card">
+    <h3>Resultado</h3>
+    <pre id="out">(aquí verás la respuesta)</pre>
+  </div>
+
+<script>
+const api = (path) => `${location.origin}/api/${path}`;
+
+async function doCreate(){
+  const res = document.getElementById("resource").value;
+  const body = document.getElementById("body").value;
+  try {
+    const data = JSON.parse(body || "{}");
+    const r = await fetch(api(`${res}`), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    show(await r.json(), r.status);
+  } catch (e) { show({ error: e.message }); }
+}
+
+async function doList(){
+  const res = document.getElementById("resource").value;
+  const r = await fetch(api(`${res}?limit=25&page=1`));
+  show(await r.json(), r.status);
+}
+
+async function doGet(){
+  const res = document.getElementById("resource").value;
+  const id = document.getElementById("docId").value.trim();
+  if(!id) return show({ error: "falta ID" });
+  const r = await fetch(api(`${res}/${id}`));
+  show(await r.json(), r.status);
+}
+
+async function doUpdate(){
+  const res = document.getElementById("resource").value;
+  const id = document.getElementById("docId").value.trim();
+  const body = document.getElementById("body").value;
+  if(!id) return show({ error: "falta ID" });
+  try {
+    const data = JSON.parse(body || "{}");
+    const r = await fetch(api(`${res}/${id}`), {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    show(await r.json(), r.status);
+  } catch (e) { show({ error: e.message }); }
+}
+
+async function doDelete(){
+  const res = document.getElementById("resource").value;
+  const id = document.getElementById("docId").value.trim();
+  if(!id) return show({ error: "falta ID" });
+  const r = await fetch(api(`${res}/${id}`), { method: "DELETE" });
+  show(await r.json(), r.status);
+}
+
+function show(json, status){
+  document.getElementById("out").textContent = `HTTP ${status||""}\n` + JSON.stringify(json, null, 2);
+}
+</script>
+</body>
+</html>
