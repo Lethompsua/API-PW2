@@ -11,6 +11,9 @@ import Sticker     from "../models/sticker.js";
 import PackType    from "../models/TipoPaquete.js";
 import PackOpening from "../models/AperturaPaquete.js";
 import UserSticker from "../models/UsuariosAlbum.js";
+import packsRoutes from "../routes/packs.routes.js";
+import albumRoutes from "../routes/album.routes.js";
+
 
 const app = express();
 app.use(cors());
@@ -27,6 +30,10 @@ app.use("/api/stickers",      crudRouter(Sticker));
 app.use("/api/packtypes",     crudRouter(PackType));
 app.use("/api/packopenings",  crudRouter(PackOpening));
 app.use("/api/userstickers",  crudRouter(UserSticker));
+
+// Extra Functions Routes
+app.use("/api/packs", packsRoutes);
+app.use("/api/album", albumRoutes);
 
 console.log(" rutas /api/usuarios, /api/jugadores, ... montadas"); // debug
 

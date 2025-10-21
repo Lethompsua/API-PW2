@@ -4,8 +4,8 @@ import { Schema, model, Types } from "mongoose";
 const StickerSchema = new Schema({
   edicion:  { type: String, required: true },          // ej. "WC-2026"
   numero:   { type: Number, required: true, min: 1 },  // número en el álbum
-  tipo:     { type: String, enum: ["player","stadium","crest","other"], required: true },
-  rareza:   { type: String, enum: ["common","uncommon","rare","legendary"], default: "common", index: true },
+  tipo:     { type: String, enum: ["jugador","estadio","escudo","otro"], required: true },
+  rareza:   { type: String, enum: ["comun","poco_comun","raro","legendario"], default: "comun", index: true },
 
   // Para type = "player"
   playerId: { type: Types.ObjectId, ref: "Player" },
