@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import authRoutes from '../routes/auth.routes.js';
 
 import { crudRouter } from "../routes/crud.factory.js";
 
@@ -22,6 +23,7 @@ app.use(morgan("dev"));
 
 
 app.get("/api/health", (_req,res)=>res.json({ ok:true }));
+app.use('/api/auth', authRoutes);
 
 // CRUD routers
 app.use("/api/usuarios",      crudRouter(Usuario));
