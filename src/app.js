@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import authRoutes from '../routes/auth.routes.js';
+import userRoutes from '../routes/user.routes.js';
 
 import { crudRouter } from "../routes/crud.factory.js";
 
@@ -36,6 +37,7 @@ app.use("/api/userstickers",  crudRouter(UserSticker));
 // Extra Functions Routes
 app.use("/api/packs", packsRoutes);
 app.use("/api/album", albumRoutes);
+app.use('/api/users', userRoutes);
 
 console.log(" rutas /api/usuarios, /api/jugadores, ... montadas"); // debug
 
