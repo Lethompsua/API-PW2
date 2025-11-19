@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     nombre: { type: String, required: true, trim: true }, // Almacena el nombre completo
     oro: { type: Number, default: 100, min: 0 },
     gemas: { type: Number, default: 0, min: 0 },
-    
+   
     // <<<< 🛑 NUEVOS CAMPOS AÑADIDOS PARA EL PERFIL 🛑 >>>>
     // Se inicializan como opcionales:
     birthDate: { type: Date, default: null }, // Mongoose requiere el formato ISO: YYYY-MM-DD

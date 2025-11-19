@@ -1,5 +1,5 @@
 // src/controllers/auth.controller.js
-
+import { OAuth2Client } from 'google-auth-library';
 import User from '../../models/Usuario.js'; // Asegúrate de que la ruta sea correcta
 
 // --- Controlador para REGISTRO (Crear cuenta) ---
