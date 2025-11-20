@@ -6,6 +6,7 @@ const StickerSchema = new Schema({
   numero:   { type: Number, required: true, min: 1 },  // número en el álbum
   tipo:     { type: String, enum: ["jugador","estadio","escudo","otro"], required: true },
   rareza:   { type: String, enum: ["comun","poco_comun","raro","legendario"], default: "comun", index: true },
+  imagen:   { type: String },
 
   // Para type = "player"
   playerId: { type: Types.ObjectId, ref: "Player" },
