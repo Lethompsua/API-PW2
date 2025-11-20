@@ -1,0 +1,363 @@
+[
+  
+  {
+    "edicion": "WC-2026",
+    "numero": 1,
+    "tipo": "jugador",
+    "rareza": "legendario",
+    "titulo": "Lionel Messi",
+    "equipo": "Argentina",
+    "imagen": "https://cdn2.telediario.mx/uploads/media/2022/12/18/lionel-messi-besa-copa-recibir.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 2,
+    "tipo": "jugador",
+    "rareza": "legendario",
+    "titulo": "Cristiano Ronaldo",
+    "equipo": "Portugal",
+    "imagen": "https://www.prensalibre.com/wp-content/uploads/2019/06/FBL-EUR-NATIONS-POR-NED_45213397.jpg?quality=82"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 3,
+    "tipo": "jugador",
+    "rareza": "raro",
+    "titulo": "Kylian Mbappé",
+    "equipo": "Francia",
+    "imagen": "https://i.eurosport.com/2018/07/15/2373643-49371630-2560-1440.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 4,
+    "tipo": "jugador",
+    "rareza": "raro",
+    "titulo": "Vinicius Jr",
+    "equipo": "Brasil",
+    "imagen": "https://i.eurosport.com/2022/12/08/3505151-71450188-2560-1440.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 5,
+    "tipo": "jugador",
+    "rareza": "raro",
+    "titulo": "Erling Haaland",
+    "equipo": "Noruega",
+    "imagen": "https://tse1.mm.bing.net/th/id/OIP.XgxEsBwR4SGiQssLGrYpDQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 6,
+    "tipo": "jugador",
+    "rareza": "poco_comun",
+    "titulo": "Jude Bellingham",
+    "equipo": "Inglaterra",
+    "imagen": "https://tse3.mm.bing.net/th/id/OIF.tPTIoEWXiZYc1L4htDHadw?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 7,
+    "tipo": "jugador",
+    "rareza": "poco_comun",
+    "titulo": "Kevin De Bruyne",
+    "equipo": "Bélgica",
+    "imagen": "https://wallpapers.com/images/hd/belgium-national-football-team-kevin-de-bruyne-k1dmdtmi31q97saa.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 8,
+    "tipo": "jugador",
+    "rareza": "poco_comun",
+    "titulo": "Mohamed Salah",
+    "equipo": "Egipto",
+    "imagen": "https://tse2.mm.bing.net/th/id/OIP.c8bemK5eNq8wkKnS5PzJHAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 9,
+    "tipo": "jugador",
+    "rareza": "comun",
+    "titulo": "Robert Lewandowski",
+    "equipo": "Polonia",
+    "imagen": "https://tse4.mm.bing.net/th/id/OIP.65VkxeK77hTM7jiREFXcRQHaEo?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 10,
+    "tipo": "jugador",
+    "rareza": "comun",
+    "titulo": "Lamine Yamal",
+    "equipo": "España",
+    "imagen": "https://th.bing.com/th?id=OIF.riGjUl9dq%2f%2beGpixlV4i5A&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 11,
+    "tipo": "estadio",
+    "rareza": "legendario",
+    "titulo": "Estadio Azteca",
+    "equipo": "México",
+    "imagen": "https://cdn-3.expansion.mx/dims4/default/a883139/2147483647/strip/true/crop/5086x3391+0+0/resize/1800x1200!/quality/90/?url=https:%2F%2Fcdn-3.expansion.mx%2F13%2F24%2F86dddaad42c9a188516558b97fcd%2Fistock-1023819902.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 12,
+    "tipo": "estadio",
+    "rareza": "raro",
+    "titulo": "Santiago Bernabéu",
+    "equipo": "España",
+    "imagen": "https://assets.goal.com/images/v3/blt940136ce7e6abd53/16049375289899_(1).jpg?auto=webp&format=pjpg&width=3840&quality=60"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 13,
+    "tipo": "estadio",
+    "rareza": "raro",
+    "titulo": "Wembley Stadium",
+    "equipo": "Inglaterra",
+    "imagen": "https://a.cdn-hotels.com/gdcs/production67/d1184/209ba1af-54ee-4550-9fd5-f0e80adc25a3.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 14,
+    "tipo": "estadio",
+    "rareza": "legendario",
+    "titulo": "Maracaná",
+    "equipo": "Brasil",
+    "imagen": "https://i.pinimg.com/originals/ba/53/28/ba53284ffd0920d141f08a84caee20ba.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 15,
+    "tipo": "estadio",
+    "rareza": "poco_comun",
+    "titulo": "MetLife Stadium",
+    "equipo": "USA",
+    "imagen": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/giants/u8hfqj9wqaqodrc48ppk"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 16,
+    "tipo": "estadio",
+    "rareza": "poco_comun",
+    "titulo": "Allianz Arena",
+    "equipo": "Alemania",
+    "imagen": "https://www.in-muenchen.de/wp-content/uploads/2024/01/allianzarena-scaled.jpeg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 17,
+    "tipo": "estadio",
+    "rareza": "comun",
+    "titulo": "Camp Nou",
+    "equipo": "España",
+    "imagen": "https://www.fcbarcelona.com/photo-resources/2020/02/25/e06f4948-9a6d-4928-a402-d5d4da066fa9/mini_AIN7_20200213_FCB_VIS_Futur-Camp-Nou_Campus_Aerial_4_Night.jpg?width=3200&height=2000"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 18,
+    "tipo": "estadio",
+    "rareza": "comun",
+    "titulo": "La Bombonera",
+    "equipo": "Argentina",
+    "imagen": "https://media.lacapital.com.ar/p/490a81fb80d71562680de52caa2a3ab3/adjuntos/204/imagenes/028/308/0028308829/1200x675/smart/imagepng.png"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 19,
+    "tipo": "estadio",
+    "rareza": "comun",
+    "titulo": "San Siro",
+    "equipo": "Italia",
+    "imagen": "https://tse4.mm.bing.net/th/id/OIP.YsJF050cD6OiXO9OsrQ1awHaFj?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 20,
+    "tipo": "estadio",
+    "rareza": "poco_comun",
+    "titulo": "SoFi Stadium",
+    "equipo": "USA",
+    "imagen": "https://alsd.com/sites/default/files/spotlight/2023-05/Aerial%20SoFi%20Stadium.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 21,
+    "tipo": "escudo",
+    "rareza": "legendario",
+    "titulo": "Escudo Argentina",
+    "equipo": "Argentina",
+    "imagen": "https://cdn.pixabay.com/photo/2023/01/02/20/33/argentina-7692977_640.png"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 22,
+    "tipo": "escudo",
+    "rareza": "legendario",
+    "titulo": "Escudo Brasil",
+    "equipo": "Brasil",
+    "imagen": "https://img.planetafobal.com/2019/04/nuevo-logo-brasil-cbf-2019.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 23,
+    "tipo": "escudo",
+    "rareza": "raro",
+    "titulo": "Escudo Francia",
+    "equipo": "Francia",
+    "imagen": "https://tse4.mm.bing.net/th/id/OIP.96p7WHmJOf1VAdNLUWYrGQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 24,
+    "tipo": "escudo",
+    "rareza": "raro",
+    "titulo": "Escudo Alemania",
+    "equipo": "Alemania",
+    "imagen": "https://st4.depositphotos.com/7442846/19656/v/1600/depositphotos_196564372-stock-illustration-logo-german-national-football-team.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 25,
+    "tipo": "escudo",
+    "rareza": "poco_comun",
+    "titulo": "Escudo España",
+    "equipo": "España",
+    "imagen": "https://multiplestudio.org/wp-content/uploads/2022/11/00-Futbol-Spain-Team-03-1024x768.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 26,
+    "tipo": "escudo",
+    "rareza": "poco_comun",
+    "titulo": "Escudo Inglaterra",
+    "equipo": "Inglaterra",
+    "imagen": "https://tse1.mm.bing.net/th/id/OIP.jRNXs_ZcQEXggqoPHU7prwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 27,
+    "tipo": "escudo",
+    "rareza": "comun",
+    "titulo": "Escudo México",
+    "equipo": "México",
+    "imagen": "https://soyreferee.com/u/fotografias/m/2021/11/30/f1280x720-7281_138956_5050.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 28,
+    "tipo": "escudo",
+    "rareza": "comun",
+    "titulo": "Escudo Portugal",
+    "equipo": "Portugal",
+    "imagen": "https://thumbs.dreamstime.com/b/logo-de-la-federaci%C3%B3n-f%C3%BAtbol-portugal-con-bandera-nacional-fifa-mundial-copa-ilustraci%C3%B3n-245990038.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 29,
+    "tipo": "escudo",
+    "rareza": "comun",
+    "titulo": "Escudo Holanda",
+    "equipo": "Países Bajos",
+    "imagen": "https://i.pinimg.com/736x/fd/81/03/fd8103b77521617e218ce6b7f5376955.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 30,
+    "tipo": "escudo",
+    "rareza": "comun",
+    "titulo": "Escudo USA",
+    "equipo": "USA",
+    "imagen": "https://www.firsttouchonline.com/wp-content/uploads/2023/01/logo_ussoccer.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 31,
+    "tipo": "otro",
+    "rareza": "legendario",
+    "titulo": "Copa Mundial WC-2026",
+    "equipo": "WC-2026",
+    "imagen": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/10/19/16661928836377.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 32,
+    "tipo": "otro",
+    "rareza": "raro",
+    "titulo": "Balon WC-2026",
+    "equipo": "WC-2026",
+    "imagen": "https://estaticos.elcolombiano.com/binrepository/1200x956/0c140/1200d675/none/11101/DKIF/h24587-wc26-omb-global-product-pro-ball-family-shot-2-4x5-1355526_48916542_20251002194207.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 33,
+    "tipo": "otro",
+    "rareza": "raro",
+    "titulo": "Maple",
+    "equipo": "WC-2026",
+    "imagen": "https://ap-cdn.sfo3.cdn.digitaloceanspaces.com/uploads/2025/09/mascotas-mundial-2026-canada-maple.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 34,
+    "tipo": "otro",
+    "rareza": "raro",
+    "titulo": "zayu",
+    "equipo": "WC-2026",
+    "imagen": "https://ap-cdn.sfo3.cdn.digitaloceanspaces.com/uploads/2025/09/mascotas-mundial-2026-mexico-zayu.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 35,
+    "tipo": "otro",
+    "rareza": "raro",
+    "titulo": "Clutch",
+    "equipo": "WC-2026",
+    "imagen": "https://ap-cdn.sfo3.cdn.digitaloceanspaces.com/uploads/2025/09/mascotas-mundial-2026-estados-unidos-clutch.jpg"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 36,
+    "tipo": "otro",
+    "rareza": "poco_comun",
+    "titulo": "Fulecco",
+    "equipo": "WC-2014",
+    "imagen": "https://tse2.mm.bing.net/th/id/OIP.Lhc5xNdm96-Cp8cSmxl0QwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 37,
+    "tipo": "otro",
+    "rareza": "poco_comun",
+    "titulo": "Zakumi",
+    "equipo": "WC-2010",
+    "imagen": "https://tse2.mm.bing.net/th/id/OIP.u7ssH-Xm-S2iVl9qPaXWMAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 38,
+    "tipo": "otro",
+    "rareza": "poco_comun",
+    "titulo": "Zabivaka",
+    "equipo": "WC-2018",
+    "imagen": "https://tse2.mm.bing.net/th/id/OIP._JCJPnj97bG_OMpY2k1_4AHaIT?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 39,
+    "tipo": "otro",
+    "rareza": "comun",
+    "titulo": "Brazuca",
+    "equipo": "WC-2014",
+    "imagen": "https://tse4.mm.bing.net/th/id/OIP.mbrK0Cb6fzQinXLk5I8T4wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    "edicion": "WC-2026",
+    "numero": 40,
+    "tipo": "otro",
+    "rareza": "comun",
+    "titulo": "Al-Rihla",
+    "equipo": "WC-2022",
+    "imagen": "https://tse2.mm.bing.net/th/id/OIP.2cKQWySSzxI-si8CTY2pGgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+  }
+]

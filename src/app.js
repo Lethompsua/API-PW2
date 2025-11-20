@@ -15,7 +15,8 @@ import PackOpening from "../models/AperturaPaquete.js";
 import UserSticker from "../models/UsuariosAlbum.js";
 import packsRoutes from "../routes/packs.routes.js";
 import albumRoutes from "../routes/album.routes.js";
-
+import playerRoutes from '../routes/player.routes.js';
+import exchangeRoutes from '../routes/exchange.routes.js';
 
 const app = express();
 app.use(cors());
@@ -38,6 +39,8 @@ app.use("/api/userstickers",  crudRouter(UserSticker));
 app.use("/api/packs", packsRoutes);
 app.use("/api/album", albumRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/players', playerRoutes);
+app.use('/api/exchange', exchangeRoutes);
 
 console.log(" rutas /api/usuarios, /api/jugadores, ... montadas"); // debug
 
