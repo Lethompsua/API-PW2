@@ -7,11 +7,15 @@ import nodemailer from 'nodemailer'; // Necesario para enviar correos
 
 // 🛑 1. CONFIGURACIÓN DEL EMAIL 🛑
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 587,              // <--- CAMBIO 1: Puerto desbloqueado
+    secure: false,          // <--- CAMBIO 2: false para puerto 587
     auth: {
-        // Usa las credenciales que ya verificaste:
         user: 'sosajuarezjosemanuel15@gmail.com', 
         pass: 'vwku fwtm fqgy cspq' 
+    },
+    tls: {
+        rejectUnauthorized: false // Opcional: Ayuda si hay líos con certificados en la nube
     }
 });
 
