@@ -15,7 +15,7 @@ import { crudRouter } from "../routes/crud.factory.js";
 
 // Modelos
 import Usuario     from "../models/Usuario.js";
-import Jugador     from "../models/jugador.js";
+import Jugador     from "../models/Jugador.js";
 import Sticker     from "../models/sticker.js"; // Ojo con mayúsculas/minúsculas en tu archivo real
 import PackType    from "../models/TipoPaquete.js";
 import PackOpening from "../models/AperturaPaquete.js";
