@@ -3,7 +3,7 @@ import app from "./app.js";
 import { connectDB } from "./config/db.js";
 
 // 1. Definir el puerto: Si .env no tiene PORT, usamos 27017 por defecto para evitar conflicto.
-const PORT = process.env.PORT || 27017; 
+const PORT = process.env.PORT || 3001; 
 
 // 2. Obtener la URI de la DB: Usamos el nombre correcto de la variable de tu .env.
 const MONGO_URI = process.env.MONGO_URI; 
