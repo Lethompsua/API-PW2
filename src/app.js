@@ -27,7 +27,7 @@ const app = express();
 // Permite que tu Frontend (desde cualquier lado) consuma esta API
 app.use(cors({
     origin: '*', // En producción, cámbialo por la URL de tu frontend en Netlify/Vercel
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 

@@ -47,13 +47,6 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     const { email, password } = req.body; 
 
-    // 👇👇👇 AQUÍ ESTÁN LOS LOGS AGREGADOS 👇👇👇
-    console.log("------------------------------------------------");
-    console.log("🚀 INICIANDO LOGIN");
-    console.log("📧 Email recibido:", email);
-    console.log("🔑 Password recibido:", password); // (Quitar esto en producción por seguridad)
-    console.log("------------------------------------------------");
-
     try {
         // 1. CARGAR USUARIO (Forzando la carga del hash)
         const user = await User.findOne({ 
@@ -61,33 +54,24 @@ export const login = async (req, res) => {
         }).select('+password'); // Asegura que el hash de la DB se cargue
 
         if (!user) {
-            console.log("❌ Error: Usuario no encontrado en la BD.");
-            return res.status(400).json({ msg: 'Credenciales inválidas (Usuario no existe).' });
+            return res.status(400).json({ msg: 'Credenciales inválidas.' });
         }
         
-        console.log("✅ Usuario encontrado:", user.email);
-        console.log("🔒 Hash en BD:", user.password);
-
         // 🛑 LÍNEA A MODIFICAR 🛑
         // ANTES: const isMatch = await user.comparePassword(password);
         
         // 1. Ahora, usamos la comparación directa de bcrypt (que es más segura aquí):
         const isMatch = await bcrypt.compare(password, user.password); // ⬅️ ¡USA ESTA LÍNEA!
 
-        console.log("🤔 ¿Contraseña coincide?:", isMatch);
-
         if (!isMatch) {
-            console.log("❌ Error: La contraseña no coincide.");
-            return res.status(400).json({ msg: 'Credenciales inválidas (Contraseña incorrecta).' });
+            return res.status(400).json({ msg: 'Credenciales inválidas.' });
         }
-
-        console.log("🎉 Login Exitoso. Enviando respuesta...");
 
         // Éxito
         res.json({ msg: 'Inicio de sesión exitoso', user: { id: user._id, email: user.email, nombre: user.nombre } });
 
     } catch (error) {
-        console.error("💥 Error CRÍTICO en login:", error.message);
+        console.error(error.message);
         res.status(500).send('Error del servidor');
     }
 };
@@ -114,14 +98,13 @@ export const forgotPassword = async (req, res) => {
         user.resetTokenExpires = tokenExpiration;
         await user.save();
     } catch (dbError) {
-        // 🛠️ CORREGIDO: Aquí tenías 'db量をerror' que causaría un error de sintaxis
-        console.error("Error al guardar token en DB:", dbError);
+        console.error("Error al guardar token en DB:", db量をerror);
         return res.status(500).json({ msg: "Error interno del servidor." });
     }
     
     // 3. CREAR ENLACE Y ENVIAR EMAIL
     // 🛑 AJUSTA ESTA URL a tu entorno real (puerto, dominio) 🛑
-    const resetLink = `http://api-pw2-9izd.onrender.com/pages/password-reset.html?token=${resetToken}`;
+    const resetLink = `http://localhost:5500/pages/password-reset.html?token=${resetToken}`;
 
     const mailOptions = {
         to: user.email,
@@ -192,3 +175,7 @@ export const resetPassword = async (req, res) => {
         res.status(500).json({ msg: "Error interno del servidor al restablecer la contraseña." });
     }
 };
+
+// 🛑 IMPORTANTE: Si usas Mongoose, debes asegurarte que cuando se guarda el
+// usuario, la contraseña se hashea. Si no tienes un middleware para eso,
+// debes asignar user.password = hashedPassword 
