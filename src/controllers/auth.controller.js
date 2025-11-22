@@ -5,18 +5,21 @@ import bcrypt from 'bcryptjs'; // Necesario para hashear contraseñas
 import crypto from 'crypto'; // Necesario para generar tokens
 import nodemailer from 'nodemailer'; // Necesario para enviar correos
 
-// 🛑 1. CONFIGURACIÓN DEL EMAIL 🛑
+// 🛑 1. CONFIGURACIÓN DEL EMAIL (VERSIÓN RENDER-SAFE) 🛑
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,              // <--- CAMBIO 1: Puerto desbloqueado
-    secure: false,          // <--- CAMBIO 2: false para puerto 587
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // false para 587 (STARTTLS)
     auth: {
         user: 'sosajuarezjosemanuel15@gmail.com', 
         pass: 'vwku fwtm fqgy cspq' 
     },
     tls: {
-        rejectUnauthorized: false // Opcional: Ayuda si hay líos con certificados en la nube
-    }
+        ciphers: 'SSLv3', // Fuerza cifrado compatible
+        rejectUnauthorized: false
+    },
+    logger: true, // Habilita logs detallados en la consola de Render
+    debug: true   // Habilita modo debug
 });
 
 
