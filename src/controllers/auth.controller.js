@@ -105,12 +105,13 @@ export const forgotPassword = async (req, res) => {
 
     try {
         await resend.emails.send({
-            from: "fanscore <onboarding@resend.dev>", 
+            from: "fanscore <onboarding@resend.dev>",
             to: user.email,
             subject: "Recuperación de Contraseña Fanscore",
             html
         });
 
+        console.log("API KEY:", process.env.RESEND_API_KEY);
         res.status(200).json({ msg: "Si el email está registrado, recibirás un enlace." });
 
     } catch (mailErr) {
