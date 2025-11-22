@@ -23,18 +23,7 @@ import UserSticker from "../models/UsuariosAlbum.js";
 
 const app = express();
 
-// --- CORS GLOBAL FIX ---
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://fifaalbum.vercel.app");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-
-  next();
-});
 
 app.use(
   cors({
