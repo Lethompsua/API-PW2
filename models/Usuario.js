@@ -22,18 +22,20 @@ const UserSchema = new Schema({
 }, { timestamps: true, versionKey: false });
 
 // el middleware genera un error 400, depues de la recuperadcion de contraseña, ya que lo hashea 2 veces y ocurre un error en moongose y lo hace null, y genera un error en el js de front donde trae los valores de API
-// UserSchema.pre('save', async function(next) {
-//     if (!this.isModified('password')) { 
-//         return next();
-//     }
-//     try {
-//         const salt = await bcrypt.genSalt(10); 
-//         this.password = await bcrypt.hash(this.password, salt); 
-//         next();
-//     } catch (error) {
-//         next(error);
-//     }
-// });
+UserSchema.pre('save', async function(next) {
+    // Si la contraseña NO se modificó, no hacemos nada
+    if (!this.isModified('password')) { 
+        return next();
+    }
+    
+    try {
+        const salt = await bcrypt.genSalt(10); 
+        this.password = await bcrypt.hash(this.password, salt); 
+        next();
+    } catch (error) {
+        next(error);
+    }
+});
 
 // Método para comparar contraseñas (para el login)
 UserSchema.methods.comparePassword = async function(candidatePassword) {
