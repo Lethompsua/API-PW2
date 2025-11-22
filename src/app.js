@@ -22,6 +22,9 @@ import PackOpening from "../models/AperturaPaquete.js";
 import UserSticker from "../models/UsuariosAlbum.js";
 
 const app = express();
+const express = require("express");
+const cors = require("cors");
+
 
 // 🛑 SOLUCIÓN EXTREMA: Manejar el método OPTIONS manualmente 
 // Esto asegura que la respuesta preflight sea correcta y permita PATCH
