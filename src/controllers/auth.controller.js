@@ -111,6 +111,7 @@ export const forgotPassword = async (req, res) => {
             html
         });
 
+        console.log("RESULTADO RESEND:", sendResult);
         console.log("API KEY:", process.env.RESEND_API_KEY);
         res.status(200).json({ msg: "Si el email está registrado, recibirás un enlace." });
 
