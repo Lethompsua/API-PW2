@@ -124,9 +124,10 @@ export const forgotPassword = async (req, res) => {
         await transporter.sendMail(mailOptions);
         res.status(200).json({ msg: "Si el email está registrado, recibirás un enlace." });
     } catch (mailError) {
-        console.error("Error al enviar el correo:", mailError);
-        res.status(200).json({ msg: "Si el email está registrado, recibirás un enlace." });
-    }
+    console.error("Error al enviar el correo:", mailError);
+    // 🚨 AQUÍ ESTÁ EL TRUCO:
+    res.status(200).json({ msg: "Si el email está registrado, recibirás un enlace." });
+}
 };
 
 
