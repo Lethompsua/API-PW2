@@ -7,7 +7,7 @@ import authRoutes from '../routes/auth.routes.js';
 import userRoutes from '../routes/user.routes.js';
 import packsRoutes from "../routes/packs.routes.js";
 import albumRoutes from "../routes/album.routes.js";
-import playerRoutes from '../routes/players.routes.js'; // Verifica si tu archivo es player o players
+import playerRoutes from '../routes/player.routes.js'; // Verifica si tu archivo es player o players
 import exchangeRoutes from '../routes/exchange.routes.js';
 
 // Factory de CRUD
