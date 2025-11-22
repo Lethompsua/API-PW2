@@ -3,79 +3,72 @@ import cors from "cors";
 import morgan from "morgan";
 
 // Importación de rutas
-import authRoutes from '../routes/auth.routes.js';
-import userRoutes from '../routes/user.routes.js';
+import authRoutes from "../routes/auth.routes.js";
+import userRoutes from "../routes/user.routes.js";
 import packsRoutes from "../routes/packs.routes.js";
 import albumRoutes from "../routes/album.routes.js";
-import playerRoutes from '../routes/player.routes.js'; 
-import exchangeRoutes from '../routes/exchange.routes.js';
+import playerRoutes from "../routes/player.routes.js";
+import exchangeRoutes from "../routes/exchange.routes.js";
 
-// Factory de CRUD
+// Factory CRUD
 import { crudRouter } from "../routes/crud.factory.js";
 
 // Modelos
-import Usuario     from "../models/Usuario.js";
-import Jugador     from "../models/Jugador.js";
-import Sticker     from "../models/sticker.js"; 
-import PackType    from "../models/TipoPaquete.js";
+import Usuario from "../models/Usuario.js";
+import Jugador from "../models/Jugador.js";
+import Sticker from "../models/sticker.js";
+import PackType from "../models/TipoPaquete.js";
 import PackOpening from "../models/AperturaPaquete.js";
 import UserSticker from "../models/UsuariosAlbum.js";
 
 const app = express();
-const express = require("express");
-const cors = require("cors");
 
-
-// 🛑 SOLUCIÓN EXTREMA: Manejar el método OPTIONS manualmente 
-// Esto asegura que la respuesta preflight sea correcta y permita PATCH
+// --- CORS GLOBAL FIX ---
 app.use((req, res, next) => {
-    // Definir los encabezados de CORS explícitamente
-    res.header('Access-Control-Allow-Origin', 'https://fifaalbum.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header("Access-Control-Allow-Origin", "https://fifaalbum.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-    // Si el método es OPTIONS (el preflight de CORS), responder inmediatamente con 200 (OK)
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(200);
-    }
-    next();
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+
+  next();
 });
 
-// --- CONFIGURACIÓN CORS PARA VERCEL (AHORA ES REDUNDANTE, PERO LA MANTENEMOS) ---
-app.use(cors({
-    origin: 'https://fifaalbum.vercel.app', 
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(
+  cors({
+    origin: "https://fifaalbum.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
-app.use(express.json());              
+app.use(express.json());
 app.use(morgan("dev"));
 
-// --- RUTA RAÍZ (NECESARIA PARA VERCEL) ---
+// --- RUTA PARA VER SI EL BACKEND ESTÁ VIVO ---
 app.get("/", (req, res) => {
-    res.send("⚽ Fanscore API is running on Vercel! 🚀");
+  res.send("⚽ Fanscore API running!");
 });
 
-app.get("/api/health", (_req,res)=>res.json({ ok:true }));
+// Health check
+app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
-// Rutas Principales
-app.use('/api/auth', authRoutes);
-
-// CRUD routers
-app.use("/api/usuarios",      crudRouter(Usuario));
-app.use("/api/jugadores",     crudRouter(Jugador));
-app.use("/api/stickers",      crudRouter(Sticker));
-app.use("/api/packtypes",     crudRouter(PackType));
-app.use("/api/packopenings",  crudRouter(PackOpening));
-app.use("/api/userstickers",  crudRouter(UserSticker));
-
-// Extra Functions Routes
+// --- RUTAS ---
+app.use("/api/auth", authRoutes);
+app.use("/api/usuarios", crudRouter(Usuario));
+app.use("/api/jugadores", crudRouter(Jugador));
+app.use("/api/stickers", crudRouter(Sticker));
+app.use("/api/packtypes", crudRouter(PackType));
+app.use("/api/packopenings", crudRouter(PackOpening));
+app.use("/api/userstickers", crudRouter(UserSticker));
 app.use("/api/packs", packsRoutes);
 app.use("/api/album", albumRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/players', playerRoutes);
-app.use('/api/exchange', exchangeRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/players", playerRoutes);
+app.use("/api/exchange", exchangeRoutes);
 
-console.log("✅ Rutas montadas correctamente");
+console.log("✅ API inicializada correctamente");
 
 export default app;
