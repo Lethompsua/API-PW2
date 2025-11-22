@@ -27,7 +27,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://fifaalbum.vercel.app",
+    origin: ["https://fifaalbum.vercel.app", "https://api-pw2-9izd.onrender.com"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
