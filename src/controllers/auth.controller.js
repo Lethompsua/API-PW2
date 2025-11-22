@@ -105,7 +105,7 @@ export const forgotPassword = async (req, res) => {
 
     try {
         await resend.emails.send({
-            from: "no-reply@fanscore.app", 
+            from: "fanscore <onboarding@resend.dev>", 
             to: user.email,
             subject: "Recuperación de Contraseña Fanscore",
             html
