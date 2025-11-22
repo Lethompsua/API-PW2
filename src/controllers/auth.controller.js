@@ -98,13 +98,14 @@ export const forgotPassword = async (req, res) => {
         user.resetTokenExpires = tokenExpiration;
         await user.save();
     } catch (dbError) {
-        console.error("Error al guardar token en DB:", db量をerror);
+        console.error("Error al guardar token en DB:", dbError);
         return res.status(500).json({ msg: "Error interno del servidor." });
     }
     
     // 3. CREAR ENLACE Y ENVIAR EMAIL
     // 🛑 AJUSTA ESTA URL a tu entorno real (puerto, dominio) 🛑
-    const resetLink = `http://localhost:5500/pages/password-reset.html?token=${resetToken}`;
+    const resetLink = `https://fifaalbum.vercel.app/pages/password-reset.html?token=${resetToken}`;
+
 
     const mailOptions = {
         to: user.email,
