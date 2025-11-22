@@ -104,7 +104,7 @@ export const forgotPassword = async (req, res) => {
     
     // 3. CREAR ENLACE Y ENVIAR EMAIL
     // 🛑 AJUSTA ESTA URL a tu entorno real (puerto, dominio) 🛑
-    const resetLink = `http://localhost:5500/pages/password-reset.html?token=${resetToken}`;
+    const resetLink = `http://api-pw2-9izd.onrender.com/pages/password-reset.html?token=${resetToken}`;
 
     const mailOptions = {
         to: user.email,
